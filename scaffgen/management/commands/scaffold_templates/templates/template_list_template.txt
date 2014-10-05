@@ -1,0 +1,34 @@
+{{% extends "base.html" %}}
+
+{{% block title %}} {model_name} List {{% endblock %}}
+
+{{% block content %}}
+
+<table>
+	<thead>
+		<tr>
+			{{% for field, value in {model}_list.0.fields.items %}}
+				<th>{{{{ field }}}}</th> 
+			{{% endfor %}}
+			
+			<th colspan="3">Actions</th>
+		</tr>
+	</thead>
+
+	{{% for item in {model}_list %}}
+	<tr>
+		{{% for field, value in item.fields.items %}}
+			<td>{{{{ value }}}}</td> 
+		{{% endfor %}}
+		<td><a href="/{app_name}/{model}/detail/{{{{item.pk}}}}">Show</a></td>
+		<td><a href="/{app_name}/{model}/edit/{{{{item.pk}}}}">Edit</a>
+		<td><a href="/{app_name}/{model}/delete/{{{{item.pk}}}}">Delete</a>
+	</tr>
+	{{% endfor %}}
+
+	<tr>
+		<td colspan="{{{{ {model}_list.0.fields.items|length|add:"3" }}}}"> <a href="/{app_name}/{model}/add">Add New</a></td>
+	</tr>
+</table>
+
+{{% endblock %}}

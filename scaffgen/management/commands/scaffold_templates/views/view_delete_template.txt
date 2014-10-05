@@ -1,0 +1,7 @@
+
+def delete_{model}(request, id):
+
+    {model} = get_object_or_404({model_name}, pk=id)
+    {model_name}.objects.filter(id=id).delete()
+    return HttpResponseRedirect('/{app_name}/{model}/list')
+

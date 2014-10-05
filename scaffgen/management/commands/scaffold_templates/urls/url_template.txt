@@ -1,0 +1,6 @@
+
+    (r'{app_name}/{model}/add/$', '{app_name}.views.create_edit_{model}'),
+    (r'{app_name}/{model}/list/$', '{app_name}.views.list_{model}'),
+    (r'{app_name}/{model}/edit/(?P<id>[^/]+)/$', '{app_name}.views.create_edit_{model}'),
+    (r'{app_name}/{model}/detail/(?P<id>[^/]+)/$', '{app_name}.views.view_{model}'),
+    (r'{app_name}/{model}/delete/(?P<id>[^/]+)/$', '{app_name}.views.delete_{model}'),

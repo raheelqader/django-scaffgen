@@ -1,0 +1,7 @@
+
+def view_{model}(request, id):
+
+	{model} = get_object_or_404({model_name}, pk=id)
+	form = {model_name}Form(instance={model})
+	return render(request, '{app_name}/view_{model}.html', {{'form': form}})
+

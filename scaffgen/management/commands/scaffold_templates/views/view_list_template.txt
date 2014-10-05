@@ -1,0 +1,6 @@
+
+def list_{model}(request):
+  
+	{model}_list = serializers.serialize("python", {model_name}.objects.all())
+	return render(request, '{app_name}/list_{model}.html', {{'{model}_list': {model}_list}})
+

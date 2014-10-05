@@ -1,0 +1,14 @@
+{{% extends "base.html" %}}
+
+{{% block title %}} {model_name} List {{% endblock %}}
+
+{{% block content %}}
+<table>
+    {{% for field in form %}}
+        <tr>
+            <td>{{{{ field.name }}}}</td>
+            <td>{{{{ field.value }}}}</td>
+        </tr>
+    {{% endfor %}}
+</table>
+{{% endblock %}}

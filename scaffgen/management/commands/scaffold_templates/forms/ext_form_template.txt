@@ -1,0 +1,10 @@
+
+class {model_name}Form(forms.ModelForm):
+{form_fields}
+
+	# def __init__(self, *args, **kwargs):
+	# 	super({model_name}Form, self).__init__(*args, **kwargs)
+	
+	class Meta:
+		model = {model_name}
+

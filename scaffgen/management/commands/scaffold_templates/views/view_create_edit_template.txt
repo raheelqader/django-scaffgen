@@ -1,0 +1,20 @@
+def create_edit_{model}(request, id=None):
+
+    if id:
+        {model} = get_object_or_404({model_name}, pk=id)
+    else:
+        {model} =  {model_name}()
+
+
+    if request.method == 'POST':
+        
+        form = {model_name}Form(request.POST or None, instance={model})
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect('/{app_name}/{model}/list')
+    else:
+    	form = {model_name}Form(instance={model})
+
+    return render(request, '{app_name}/create_edit_{model}.html', {{'form': form}})
+

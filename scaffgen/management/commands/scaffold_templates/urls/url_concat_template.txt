@@ -1,0 +1,6 @@
+
+urlpatterns += patterns ('',
+
+(r'^', include('{app_name}.urls')),
+
+)

@@ -1,0 +1,6 @@
+
+class {model_name}Form(forms.ModelForm):
+	class Meta:
+		model = {model_name}
+		fields = '__all__'
+
